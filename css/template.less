@@ -1,52 +1,82 @@
-// by Caglar Yanik, 2014
+/* FRONTEND LESS
+*********************************************/
 
-(function($){
-	$(document).ready(function(){
-		// bootstrap dropdown menu
-		$('.navbar .parent > a').addClass('dropdown-toggle');
-		$('.navbar .dropdown-toggle').attr('data-toggle','dropdown');
-		$('.navbar .dropdown-toggle').append(' <b class="caret"></b>');
-		$('footer ul').removeClass('nav navbar-nav menu');
-		
-		// CY_LIGHTBOX
-		$("article img").each(function ()
-		{
-			var currentImg = $(this);  // cache the selector
-			
-			function check() {
-				if ($(currentImg).height() < 150) return false;
-				if ($(currentImg).width() < 150) return false;
-				if ($(currentImg).parent().is('a')) return false;
-				if ($(currentImg).closest('span').hasClass('hasTip')) return false;
-				if ($(currentImg).hasClass('noLightbox')) return false;
-				
-				return true;
-			}
- 
-			if ( check() ) {
-				var cyImgTitle = currentImg.attr("title") === undefined ? "" : currentImg.attr("title");
-				var cyImgAlt  = currentImg.attr("alt") === undefined ? "" : currentImg.attr("alt");
-				var cyWrap = "<a class='jcepopup' " +
-							"rel='title[" + cyImgTitle + "]; caption[" + cyImgAlt + "]' " +
-							"type='image' " + 
-							"href='" + currentImg.attr("src") + "' " +
-							"title='" + cyImgTitle +  "::" + cyImgAlt + "'" +
-							"target='_blank' /> </a>";
-				
-				currentImg.wrap(cyWrap);
-			}
-		});
-		
-		
-		$('article img').addClass('img-responsive');
+// Bootstrap
+@import "bootstrap/bootstrap.less";
 
-		
-		// Scroll to top
-		$("a[href='#top']").click(function() {
-  			$("html, body").animate({ scrollTop: 0 }, "slow");
-  			return false;
-		});
-		
-		
-	});
-})(jQuery.noConflict());
+// Font Awesome
+@import "font-awesome/font-awesome.less";
+
+// Mixins
+.border-radius(@radius: @border-radius-base) {
+	.border-top-radius(@radius);
+	.border-bottom-radius(@radius);
+}
+
+.resetGradients() {
+	background-color: #fff;
+	background-image: none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled = false)";
+	filter: none;
+}
+
+// HTML
+html {
+	overflow-y: scroll; /* scrollbar fix (prevent ugly left pull for lower content sites) */
+}
+
+body {
+	padding-top: 80px; 
+	padding-bottom: 30px;
+}
+
+#insidebar ul.unstyled {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#insidebar .form-control {
+	width: 100% !important;
+}
+
+
+
+/* MEDIA QUERIES
+*********************************************/
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query -> mobile first strategy */
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  .navbar div.search {
+	padding: 0 0 20px 0;
+	width: 100%;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #mod-search-searchword {
+	margin-top: 7px;
+  }
+  .form-group {
+	padding: 5px 0;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* for higher resolutions (android and retina) */
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (max--moz-device-pixel-ratio: 1.5) {
+  
+}
