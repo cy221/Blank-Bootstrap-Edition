@@ -16,11 +16,11 @@ $this->setGenerator(null);
 $doc->setMetadata('x-ua-compatible','IE=edge,chrome=1');
 
 // jquery
-// $doc->addScript($tpath.'/js/jquery-2.1.1.min.js');
+//$doc->addScript($tpath.'/js/jquery-2.1.1.min.js');
 // $doc->addScript($tpath.'/js/jquery-noconflict.js');
 
 // holder
-// $doc->addScript($tpath.'/js/holder.js');
+$doc->addScript($tpath.'/js/holder.js');
 
 // bootstrap
 $doc->addScript($tpath.'/js/bootstrap.min.js');

@@ -36,6 +36,7 @@
 		<position>navbar</position>
 		<position>breadcrumbs</position>
 		<position>largebar</position>
+		<position>carousel</position>
 		<position>sidebar</position>
 		<position>debug</position>
 	</positions>

@@ -6,6 +6,13 @@ jQuery(document).ready(function($) {
 		// $('.navbar .parent > a').addClass('dropdown-toggle');
 		// $('.navbar .dropdown-toggle').attr('data-toggle','dropdown');
 		// $('.navbar .dropdown-toggle').append(' <b class="caret"></b>');
+
+		// Carousel
+		$('.carousel').carousel();
+		
+		
+		
+		
 		
 		// alle Bilder responive machen
 		$('main img').addClass('img-responsive');
